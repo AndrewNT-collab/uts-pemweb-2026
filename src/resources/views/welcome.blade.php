@@ -8,9 +8,49 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black text-white">
+    <!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full bg-black/70 backdrop-blur border-b border-zinc-800 z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <h1 class="text-xl font-bold text-white">
+            Andrew Portfolio
+        </h1>
+
+        <div class="flex items-center gap-6 text-sm text-gray-300">
+
+            <a href="#about" class="hover:text-white transition">
+                About
+            </a>
+
+            <a href="#projects" class="hover:text-white transition">
+                Projects
+            </a>
+
+            <a href="#contact" class="hover:text-white transition">
+                Contact
+            </a>
+
+            <a href="/admin"
+               class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl text-white transition">
+                Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
 
     <!-- HERO -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <section class="min-h-screen pt-32 flex flex-col justify-center items-center text-center px-6">
+
+        <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-blue-500 mb-6 bg-zinc-900">
+            <img src="/profile.jpg"
+                 alt="Profile Photo"
+                 class="w-full h-full object-cover">
+        </div>
+
         <h1 class="text-5xl md:text-7xl font-bold mb-4">
             Andrew Novan Then
         </h1>
@@ -20,52 +60,127 @@
         </p>
 
         <p class="text-gray-400 text-lg md:text-xl mb-8">
-            Web Developer • Laravel • Filament • MySQL
+            Student • Laravel • Filament • MariaDB
         </p>
 
-        <a href="#projects"
+        <a href="#about"
            class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-2xl">
-            View Projects
+            View Profile
         </a>
+
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="px-6 md:px-20 py-20">
-        <h2 class="text-4xl font-bold mb-6">
-            About Me
+
+        <h2 class="text-4xl font-bold mb-10">
+            Biodata
         </h2>
 
-        <p class="text-gray-400 leading-8 max-w-3xl">
-            Saya adalah mahasiswa Teknik Informatika yang memiliki minat dalam
-            pengembangan website dan sistem berbasis web. Website ini dibuat
-            sebagai portfolio personal sekaligus media showcase untuk menampilkan
-            project akhir saya, yaitu Endfield Blueprint System.
-        </p>
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl">
 
-        <div class="grid md:grid-cols-4 gap-4 mt-10 max-w-4xl">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+
+                <h3 class="text-2xl font-bold mb-6">
+                    Profile
+                </h3>
+
+                <div class="space-y-4 text-gray-400">
+
+                    <p>
+                        <span class="text-white font-semibold">Nama:</span>
+                        Andrew Novan Then
+                    </p>
+
+                    <p>
+                        <span class="text-white font-semibold">NIM:</span>
+                        20240801024
+                    </p>
+
+                    <p>
+                        <span class="text-white font-semibold">Program Studi:</span>
+                        Teknik Informatika
+                    </p>
+
+                    <p>
+                        <span class="text-white font-semibold">Universitas:</span>
+                        Universitas Esa Unggul
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+
+                <h3 class="text-2xl font-bold mb-6">
+                    About Me
+                </h3>
+
+                <p class="text-gray-400 leading-8">
+                    Website ini dibuat sebagai portfolio personal sekaligus media showcase
+                    untuk menampilkan project akhir saya, yaitu Endfield Factory Blueprint System.
+                    Project ini dikembangkan menggunakan Laravel, Filament, Docker, dan MariaDB
+                    sebagai implementasi sistem berbasis web modern.
+                </p>
+
+            </div>
+
+        </div>
+
+        <h3 class="text-2xl font-bold mt-12 mb-6">
+            Skills & Tech Stack
+        </h3>
+
+        <div class="grid md:grid-cols-4 gap-4 max-w-4xl">
+
             <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
                 Laravel
             </div>
+
             <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
                 Filament
             </div>
+
             <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
                 MySQL
             </div>
+
             <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
                 Tailwind CSS
             </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                Docker
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                REST API
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                GitHub
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+                VS Code
+            </div>
+
         </div>
+
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="px-6 md:px-20 py-20">
+
         <h2 class="text-4xl font-bold mb-10">
             Showcase Project
         </h2>
 
         <div class="grid md:grid-cols-2 gap-6">
+
             @foreach ($projects as $project)
+
                 <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
 
                     <div class="mb-4">
@@ -90,13 +205,22 @@
                         {{ $project->problem_analysis }}
                     </div>
 
+                    <a href="/projects/{{ $project->id }}"
+                       class="inline-block mt-6 text-blue-400 hover:text-blue-300">
+                        View Detail →
+                    </a>
+
                 </div>
+
             @endforeach
+
         </div>
+
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="px-6 md:px-20 py-20">
+
         <h2 class="text-4xl font-bold mb-10">
             Contact
         </h2>
@@ -140,10 +264,15 @@
                         class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-2xl">
                     Send Message
                 </button>
+
             </form>
 
         </div>
+
     </section>
 
 </body>
+<footer class="border-t border-zinc-800 py-8 text-center text-gray-500 text-sm">
+    © 2026 Andrew Novan Then — Endfield Factory Blueprint System
+</footer>
 </html>

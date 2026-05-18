@@ -8,7 +8,14 @@ use App\Models\Contact;
 
 Route::get('/', function () {
     $projects = Project::all();
+
     return view('welcome', compact('projects'));
+});
+
+Route::get('/projects/{id}', function ($id) {
+    $project = Project::findOrFail($id);
+
+    return view('project-detail', compact('project'));
 });
 
 Route::post('/contact', function (Request $request) {
