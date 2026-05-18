@@ -7,45 +7,61 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white">
-    <!-- NAVBAR -->
-<nav class="fixed top-0 left-0 w-full bg-black/70 backdrop-blur border-b border-zinc-800 z-50">
 
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<body class="bg-black text-white overflow-x-hidden">
 
-        <h1 class="text-xl font-bold text-white">
-            Andrew Portfolio
-        </h1>
+    <!-- BACKGROUND EFFECT -->
+    <div class="fixed inset-0 -z-10">
 
-        <div class="flex items-center gap-6 text-sm text-gray-300">
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 blur-3xl rounded-full">
+        </div>
 
-            <a href="#about" class="hover:text-white transition">
-                About
-            </a>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-3xl rounded-full">
+        </div>
 
-            <a href="#projects" class="hover:text-white transition">
-                Projects
-            </a>
-
-            <a href="#contact" class="hover:text-white transition">
-                Contact
-            </a>
-
-            <a href="/admin"
-               class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl text-white transition">
-                Dashboard
-            </a>
-
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]">
         </div>
 
     </div>
 
-</nav>
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-black/50 backdrop-blur border-b border-zinc-800 z-50">
+
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <h1 class="text-xl font-bold text-white">
+                Andrew Portfolio
+            </h1>
+
+            <div class="flex items-center gap-6 text-sm text-gray-300">
+
+                <a href="#about" class="hover:text-white transition">
+                    About
+                </a>
+
+                <a href="#projects" class="hover:text-white transition">
+                    Projects
+                </a>
+
+                <a href="#contact" class="hover:text-white transition">
+                    Contact
+                </a>
+
+                <a href="/admin"
+                   class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl text-white transition">
+                    Dashboard
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
 
     <!-- HERO -->
     <section class="min-h-screen pt-32 flex flex-col justify-center items-center text-center px-6">
 
-        <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-blue-500 mb-6 bg-zinc-900">
+        <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-blue-500 mb-6 bg-zinc-900/70 backdrop-blur shadow-2xl shadow-blue-500/20">
             <img src="/profile.jpg"
                  alt="Profile Photo"
                  class="w-full h-full object-cover">
@@ -64,7 +80,7 @@
         </p>
 
         <a href="#about"
-           class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-2xl">
+           class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-2xl shadow-lg shadow-blue-500/30">
             View Profile
         </a>
 
@@ -79,7 +95,7 @@
 
         <div class="grid md:grid-cols-2 gap-8 max-w-5xl">
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-3xl p-8 shadow-xl">
 
                 <h3 class="text-2xl font-bold mb-6">
                     Profile
@@ -111,7 +127,7 @@
 
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-3xl p-8 shadow-xl">
 
                 <h3 class="text-2xl font-bold mb-6">
                     About Me
@@ -134,35 +150,35 @@
 
         <div class="grid md:grid-cols-4 gap-4 max-w-4xl">
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 Laravel
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 Filament
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 MySQL
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 Tailwind CSS
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 Docker
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 REST API
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 GitHub
             </div>
 
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+            <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 shadow-xl">
                 VS Code
             </div>
 
@@ -181,7 +197,7 @@
 
             @foreach ($projects as $project)
 
-                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+                <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-3xl p-6 shadow-xl">
 
                     <div class="mb-4">
                         <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">
@@ -225,7 +241,7 @@
             Contact
         </h2>
 
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 max-w-2xl">
+        <div class="bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-3xl p-8 max-w-2xl shadow-xl">
 
             @if (session('success'))
                 <div class="mb-4 bg-green-500/20 text-green-400 p-4 rounded-xl">
@@ -261,7 +277,7 @@
                 </div>
 
                 <button type="submit"
-                        class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-2xl">
+                        class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-2xl shadow-lg shadow-blue-500/30">
                     Send Message
                 </button>
 
@@ -271,8 +287,10 @@
 
     </section>
 
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-800 py-8 text-center text-gray-500 text-sm">
+        © 2026 Andrew Novan Then — Endfield Factory Blueprint System
+    </footer>
+
 </body>
-<footer class="border-t border-zinc-800 py-8 text-center text-gray-500 text-sm">
-    © 2026 Andrew Novan Then — Endfield Factory Blueprint System
-</footer>
 </html>
