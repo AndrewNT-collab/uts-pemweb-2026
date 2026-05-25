@@ -3,22 +3,34 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
+
 use App\Models\Project;
 use App\Models\Contact;
+use App\Models\Profile;
+use App\Models\Skill;
 
 Route::get('/', function () {
-    $projects = Project::all();
 
-    return view('welcome', compact('projects'));
+    $projects = Project::all();
+    $profile = Profile::first();
+    $skills = Skill::all();
+
+    return view('welcome', compact(
+        'projects',
+        'profile',
+        'skills'
+    ));
 });
 
 Route::get('/projects/{id}', function ($id) {
+
     $project = Project::findOrFail($id);
 
     return view('project-detail', compact('project'));
 });
 
 Route::post('/contact', function (Request $request) {
+
     Contact::create([
         'name' => $request->name,
         'email' => $request->email,
@@ -29,9 +41,15 @@ Route::post('/contact', function (Request $request) {
 })->name('contact.store');
 
 Livewire::setUpdateRoute(function ($handle) {
-    return Route::post(config('app.asset_prefix') . '/livewire/update', $handle);
+    return Route::post(
+        config('app.asset_prefix') . '/livewire/update',
+        $handle
+    );
 });
 
 Livewire::setScriptRoute(function ($handle) {
-    return Route::get(config('app.asset_prefix') . '/livewire/livewire.js', $handle);
+    return Route::get(
+        config('app.asset_prefix') . '/livewire/livewire.js',
+        $handle
+    );
 });
