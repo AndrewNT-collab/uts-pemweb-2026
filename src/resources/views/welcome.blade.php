@@ -53,7 +53,9 @@
 
             <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-blue-500 mb-6 bg-zinc-900/70 backdrop-blur shadow-2xl shadow-blue-500/20">
 
-                <img src="{{ $profile && $profile->photo ? '/' . $profile->photo : '/profile.jpg' }}"
+                <img src="{{ $profile && $profile->photo
+                    ? asset('storage/' . $profile->photo)
+                    : asset('profile.jpg') }}"
                     alt="Profile Photo"
                     class="w-full h-full object-cover">
 

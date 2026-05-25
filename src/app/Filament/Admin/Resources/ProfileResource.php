@@ -52,10 +52,10 @@ class ProfileResource extends Resource
                     ->rows(5)
                     ->columnSpanFull(),
 
-                Forms\Components\TextInput::make('photo')
-                    ->label('Foto Profile')
-                    ->placeholder('profile.jpg')
-                    ->maxLength(255),
+                Forms\Components\FileUpload::make('photo')
+                    ->image()
+                    ->directory('profiles')
+                    ->imageEditor(),
             ]);
     }
 
